@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## The functions makeCacheMatrix and cacheSolve basically creates a matrix (makeCacheMatrix) based on user input and computes
+## the inverse of the user defined matrix (cacheSolve function)
+## This creates a new matrix based on the input the user gives. It is assumed that the input given 
+## by user is an invertible matrix. No checks are done to see if the matrix is invertible or not.
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -18,7 +18,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve function computes the inverse of the matrix using R's solve function itself.
+## and retrieves the inverse matrix from memory if it already exists or computes one and stores it in memory
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -32,3 +33,11 @@ cacheSolve <- function(x, ...) {
   x$setinv(m)
   m
 }
+
+## Commands to execute to check the working of this program
+# m<- makeCacheMatrix( )
+# m$set( matrix( rnorm(4), 2, 2))         #Creates a new matrix
+# m$get()                                 # Gets the new matrix created above
+# cacheSolve( m )                         # Gets the inverse matrix not cached
+# cacheSolve( m )                         # Gets the inverse matrix, cached though
+
